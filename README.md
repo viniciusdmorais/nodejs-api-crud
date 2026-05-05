@@ -1,6 +1,7 @@
-# 🚀 API REST com Node.js e Express (CRUD de Clientes)
+# 🚀 API REST com Node.js, Express e SQLite (CRUD de Clientes)
 
-API REST desenvolvida com Node.js e Express, implementando operações CRUD completas e simulando um fluxo de backend para gerenciamento de dados de clientes.
+API REST desenvolvida com Node.js e Express, implementando operações CRUD completas com persistência de dados utilizando SQLite.
+O projeto simula um fluxo real de backend para gerenciamento de clientes.
 
 ---
 
@@ -18,6 +19,7 @@ API REST desenvolvida com Node.js e Express, implementando operações CRUD comp
 
 * Node.js
 * Express
+* SQLite (banco de dados local)
 * Postman (para testes)
 
 ---
@@ -52,6 +54,22 @@ node server.js
 
 ---
 
+## 🗄️ Banco de dados
+
+O projeto utiliza SQLite, criando automaticamente um arquivo local:
+
+```bash
+database.db
+```
+
+A tabela `clientes` é criada automaticamente na primeira execução com a seguinte estrutura:
+
+* id (INTEGER, PK, AUTOINCREMENT)
+* nome (TEXT)
+* cidade (TEXT)
+
+---
+
 ## 🌐 Endpoints disponíveis
 
 | Método | Rota          | Descrição               |
@@ -80,7 +98,7 @@ Content-Type: application/json
 
 ```json
 {
-  "id": 4,
+  "id": 1,
   "nome": "Carlos",
   "cidade": "Campinas"
 }
@@ -100,8 +118,8 @@ GET http://localhost:3000/clientes
 [
   {
     "id": 1,
-    "nome": "Viny",
-    "cidade": "Ribeirão Preto"
+    "nome": "Carlos",
+    "cidade": "Campinas"
   }
 ]
 ```
@@ -115,14 +133,17 @@ GET http://localhost:3000/clientes
 * Uso de JSON
 * Estruturação de rotas
 * Testes com Postman
+* Persistência de dados com SQLite
+* Operações CRUD com banco de dados
 
 ---
 
 ## 🚧 Melhorias futuras
 
-* Integração com banco de dados (SQL Server / PostgreSQL)
+* Integração com SQL Server / PostgreSQL
 * Implementação de autenticação (JWT)
 * Validação de dados
+* Organização em camadas (routes, controllers, services)
 * Deploy em ambiente cloud
 
 ---
